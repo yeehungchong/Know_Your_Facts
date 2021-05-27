@@ -83,6 +83,7 @@ public class Frag1 extends Fragment {
         btnFrag1 = view.findViewById(R.id.btnFrag1);
         linearlayout1 = view.findViewById(R.id.linearlayout1);
         iv1 = view.findViewById(R.id.iv);
+
         String imageUrl = "https://wtffunfact.com/wp-content/uploads/2021/05/WTF-Fun-Fact-Arctic-Foxs-Colorful-Fur.png";
         Picasso.with(view.getContext()).load(imageUrl).into(iv1);
 
@@ -95,11 +96,20 @@ public class Frag1 extends Fragment {
 
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
                 SharedPreferences.Editor prefEdit = prefs.edit();
-                prefEdit.putInt("currColor2", color);
+                prefEdit.putInt("currColor1", color);
                 prefEdit.commit();
 
             }
         });
         return view;
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        int currColor1 = prefs.getInt("currColor1", 0);
+        linearlayout1.setBackgroundColor(currColor1);
+    }
+
 }

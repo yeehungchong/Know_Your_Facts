@@ -93,4 +93,12 @@ public class Frag2 extends Fragment {
         });
         return view;
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        int currColor2 = prefs.getInt("currColor2", 0);
+        linearlayout2.setBackgroundColor(currColor2);
+    }
 }
