@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 
     @Override
@@ -73,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         int currVPager = prefs.getInt("currVPager", 0);
         vPager.setCurrentItem(currVPager, true);
+
         Log.d("RESTORE", String.valueOf(currVPager));
     }
 

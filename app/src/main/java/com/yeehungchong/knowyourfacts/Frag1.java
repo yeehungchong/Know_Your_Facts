@@ -1,5 +1,6 @@
 package com.yeehungchong.knowyourfacts;
 
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -7,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -78,8 +81,7 @@ public class Frag1 extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_frag1, container, false);
 
@@ -87,21 +89,20 @@ public class Frag1 extends Fragment {
         btnFrag1 = view.findViewById(R.id.btnFrag1);
         linearlayout1 = view.findViewById(R.id.linearlayout1);
 
-        // Inflate the layout for this fragment
-        //FragmentManager fm = getSupportFragmentManager();
         btnFrag1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Random random = new Random();
                 int color = Color.argb(255,random.nextInt(256), random.nextInt(256), random.nextInt(256));
                 linearlayout1.setBackgroundColor(color);
+
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+                SharedPreferences.Editor prefEdit = prefs.edit();
+                prefEdit.putInt("currColor2", color);
+                prefEdit.commit();
+
             }
         });
-
-
-
-
         return view;
-
     }
 }
