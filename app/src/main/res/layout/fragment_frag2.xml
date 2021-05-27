@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Frag2">
-    android:background="@color/teal_200"
-    tools:context=".Frag2">
+    tools:context=".Frag2"
+    android:background="@color/purple_200">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
+        android:id="@+id/linearlayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#4CAF50"
