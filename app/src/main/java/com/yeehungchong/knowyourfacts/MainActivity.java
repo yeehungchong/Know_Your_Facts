@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+    //this is a test comemnt: i love u
 
     Button btnRead;
 

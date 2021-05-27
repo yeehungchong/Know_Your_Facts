@@ -12,10 +12,10 @@ import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link frag2#newInstance} factory method to
+ * Use the {@link Frag2#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class frag2 extends Fragment {
+public class Frag2 extends Fragment {
     TextView tvFrag2;
     Button btnFrag2;
 
@@ -28,7 +28,7 @@ public class frag2 extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public frag2() {
+    public Frag2() {
         // Required empty public constructor
     }
 
@@ -41,8 +41,8 @@ public class frag2 extends Fragment {
      * @return A new instance of fragment frag2.
      */
     // TODO: Rename and change types and number of parameters
-    public static frag2 newInstance(String param1, String param2) {
-        frag2 fragment = new frag2();
+    public static Frag2 newInstance(String param1, String param2) {
+        Frag2 fragment = new Frag2();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
