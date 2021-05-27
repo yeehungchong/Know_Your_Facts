@@ -8,10 +8,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.ViewPager;
+
+import java.util.ArrayList;
+
+
 public class MainActivity extends AppCompatActivity {
 
     Button btnRead;
     ViewPager vPager;
+
+    ArrayList<Fragment> al;
+    MyFragmentPagerAdapter adapter;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +32,19 @@ public class MainActivity extends AppCompatActivity {
 
         btnRead = findViewById(R.id.btnRead);
         vPager = findViewById(R.id.viewpager);
+
+        vPager = findViewById(R.id.viewpager);
+
+        FragmentManager fm = getSupportFragmentManager();
+
+        al = new ArrayList<Fragment>();
+        al.add(new Frag1());
+        al.add(new Frag2());
+
+        adapter = new MyFragmentPagerAdapter(fm, al);
+
+        vPager.setAdapter(adapter);
+
     }
 
     @Override
@@ -58,4 +83,7 @@ public class MainActivity extends AppCompatActivity {
             vPager.setCurrentItem(nextPage, true);
         }
     }
+
+
+
 }
