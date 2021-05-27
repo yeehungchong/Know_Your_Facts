@@ -15,6 +15,7 @@ import android.widget.TextView;
  * Use the {@link Frag2#newInstance} factory method to
  * create an instance of this fragment.
  */
+
 public class Frag2 extends Fragment {
     TextView tvFrag2;
     Button btnFrag2;
