@@ -6,6 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
@@ -33,17 +34,19 @@ public class MainActivity extends AppCompatActivity {
         btnRead = findViewById(R.id.btnRead);
         vPager = findViewById(R.id.viewpager);
 
-        vPager = findViewById(R.id.viewpager);
-
         FragmentManager fm = getSupportFragmentManager();
-
         al = new ArrayList<Fragment>();
         al.add(new Frag1());
         al.add(new Frag2());
-
         adapter = new MyFragmentPagerAdapter(fm, al);
-
         vPager.setAdapter(adapter);
+
+        btnRead.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
     }
 
