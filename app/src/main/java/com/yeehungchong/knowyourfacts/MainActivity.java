@@ -1,23 +1,44 @@
 package com.yeehungchong.knowyourfacts;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     //this is a test comemnt: i love u
 
+    ArrayList<Fragment> al;
     Button btnRead;
+    MyFragmentPagerAdapter adapter;
+    ViewPager vPager;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        vPager = findViewById(R.id.viewpager1);
         btnRead = findViewById(R.id.btnRead);
+
+        FragmentManager fm = getSupportFragmentManager();
+
+        al = new ArrayList<Fragment>();
+        al.add(new Frag1());
+        al.add(new Frag2());
+
+        adapter = new MyFragmentPagerAdapter(fm, al);
+
+        vPager.setAdapter(adapter);
+
     }
 
     @Override
