@@ -4,9 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.app.Activity;
-import android.content.Context;
+import android.preference.PreferenceManager;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,16 +19,12 @@ import androidx.viewpager.widget.ViewPager;
 
 import java.util.ArrayList;
 
-
 public class MainActivity extends AppCompatActivity {
 
     Button btnRead;
     ViewPager vPager;
-
     ArrayList<Fragment> al;
     MyFragmentPagerAdapter adapter;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,13 +59,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        SharedPreferences sharedPreferences = getSharedPreferences("fragment_frag2", Activity.MODE_PRIVATE);
+        int currVPager = vPager.getCurrentItem();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor prefEdit = prefs.edit();
+        prefEdit.putInt("currVPager", currVPager);
+        prefEdit.commit();
+        Log.d("SAVE", String.valueOf(currVPager));
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        int currVPager = prefs.getInt("currVPager", 0);
+        vPager.setCurrentItem(currVPager, true);
+        Log.d("RESTORE", String.valueOf(currVPager));
     }
 
     @Override
