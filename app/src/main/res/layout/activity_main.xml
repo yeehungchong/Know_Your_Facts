@@ -7,17 +7,13 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/teal_200"
-        android:text="Hello World!" />
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
 
-    <Button
-        android:id="@+id/btnColor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Change Color" />
+
 
     <Button
         android:id="@+id/btnRead"

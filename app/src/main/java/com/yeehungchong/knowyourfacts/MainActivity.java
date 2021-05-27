@@ -9,10 +9,14 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity {
     //this is a test comemnt: i love u
 
+    Button btnRead;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        btnRead = findViewById(R.id.btnRead);
     }
 
     @Override
