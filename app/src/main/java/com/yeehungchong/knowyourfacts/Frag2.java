@@ -1,14 +1,19 @@
 package com.yeehungchong.knowyourfacts;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.util.Random;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,6 +24,8 @@ import android.widget.TextView;
 public class Frag2 extends Fragment {
     TextView tvFrag2;
     Button btnFrag2;
+    ViewPager vPager;
+    LinearLayout linearlayout2;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -63,10 +70,22 @@ public class Frag2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_frag1, container, false);
+        View view = inflater.inflate(R.layout.fragment_frag2, container, false);
 
         tvFrag2 = view.findViewById(R.id.tvFrag2);
         btnFrag2 = view.findViewById(R.id.btnFrag2);
+        linearlayout2 = view.findViewById(R.id.linearlayout2);
+
+        btnFrag2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Random random = new Random();
+                int color = Color.argb(255,random.nextInt(256), random.nextInt(256), random.nextInt(256));
+                linearlayout2.setBackgroundColor(color);
+            }
+        });
+
+
 
         return view;
     }
