@@ -1,5 +1,6 @@
 package com.yeehungchong.knowyourfacts;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,9 +11,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +28,7 @@ public class Frag1 extends Fragment {
     ArrayList<Fragment> al;
     MyFragmentPagerAdapter adapter;
     ViewPager vPager;
+    LinearLayout linearlayout1;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -81,9 +85,18 @@ public class Frag1 extends Fragment {
 
         tvFrag1 = view.findViewById(R.id.tvFrag1);
         btnFrag1 = view.findViewById(R.id.btnFrag1);
+        linearlayout1 = view.findViewById(R.id.linearlayout1);
 
         // Inflate the layout for this fragment
         //FragmentManager fm = getSupportFragmentManager();
+        btnFrag1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Random random = new Random();
+                int color = Color.argb(255,random.nextInt(256), random.nextInt(256), random.nextInt(256));
+                linearlayout1.setBackgroundColor(color);
+            }
+        });
 
 
 

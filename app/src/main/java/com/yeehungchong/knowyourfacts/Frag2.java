@@ -1,5 +1,6 @@
 package com.yeehungchong.knowyourfacts;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,7 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.util.Random;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,6 +24,7 @@ public class Frag2 extends Fragment {
     TextView tvFrag2;
     Button btnFrag2;
     ViewPager vPager;
+    LinearLayout linearlayout2;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -68,6 +73,16 @@ public class Frag2 extends Fragment {
 
         tvFrag2 = view.findViewById(R.id.tvFrag2);
         btnFrag2 = view.findViewById(R.id.btnFrag2);
+        linearlayout2 = view.findViewById(R.id.linearlayout2);
+
+        btnFrag2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Random random = new Random();
+                int color = Color.argb(255,random.nextInt(256), random.nextInt(256), random.nextInt(256));
+                linearlayout2.setBackgroundColor(color);
+            }
+        });
 
 
 
