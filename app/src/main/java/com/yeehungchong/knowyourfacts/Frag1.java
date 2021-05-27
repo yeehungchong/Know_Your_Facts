@@ -81,11 +81,12 @@ public class Frag1 extends Fragment {
 
         tvFrag1 = view.findViewById(R.id.tvFrag1);
         btnFrag1 = view.findViewById(R.id.btnFrag1);
-       
+
         // Inflate the layout for this fragment
         //FragmentManager fm = getSupportFragmentManager();
 
-        vPager.setAdapter(adapter);
+
+
 
         return view;
 

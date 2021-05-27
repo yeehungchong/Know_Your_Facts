@@ -69,6 +69,8 @@ public class Frag2 extends Fragment {
         tvFrag2 = view.findViewById(R.id.tvFrag2);
         btnFrag2 = view.findViewById(R.id.btnFrag2);
 
+
+
         return view;
     }
 }
