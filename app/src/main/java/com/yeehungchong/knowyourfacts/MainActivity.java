@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        vPager = findViewById(R.id.viewpager1);
+        vPager = findViewById(R.id.viewpager);
         btnRead = findViewById(R.id.btnRead);
 
         FragmentManager fm = getSupportFragmentManager();

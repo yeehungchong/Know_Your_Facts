@@ -85,7 +85,6 @@ public class Frag1 extends Fragment {
         // Inflate the layout for this fragment
         //FragmentManager fm = getSupportFragmentManager();
 
-
         vPager.setAdapter(adapter);
 
         return view;
