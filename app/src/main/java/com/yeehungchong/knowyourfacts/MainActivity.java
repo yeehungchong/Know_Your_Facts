@@ -1,9 +1,6 @@
 package com.yeehungchong.knowyourfacts;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
@@ -11,15 +8,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.ViewPager;
+
 import java.util.ArrayList;
 
+
 public class MainActivity extends AppCompatActivity {
-    //this is a test comemnt: i love u
+
+    Button btnRead;
+    ViewPager vPager;
 
     ArrayList<Fragment> al;
-    Button btnRead;
     MyFragmentPagerAdapter adapter;
-    ViewPager vPager;
+
 
 
     @Override
@@ -27,8 +30,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        vPager = findViewById(R.id.viewpager);
         btnRead = findViewById(R.id.btnRead);
+        vPager = findViewById(R.id.viewpager);
+
+        vPager = findViewById(R.id.viewpager);
 
         FragmentManager fm = getSupportFragmentManager();
 
@@ -78,4 +83,7 @@ public class MainActivity extends AppCompatActivity {
             vPager.setCurrentItem(nextPage, true);
         }
     }
+
+
+
 }

@@ -3,6 +3,7 @@ package com.yeehungchong.knowyourfacts;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,7 @@ import android.widget.TextView;
 public class Frag2 extends Fragment {
     TextView tvFrag2;
     Button btnFrag2;
+    ViewPager vPager;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -66,6 +68,8 @@ public class Frag2 extends Fragment {
 
         tvFrag2 = view.findViewById(R.id.tvFrag2);
         btnFrag2 = view.findViewById(R.id.btnFrag2);
+
+
 
         return view;
     }
