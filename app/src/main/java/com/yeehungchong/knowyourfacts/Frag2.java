@@ -64,7 +64,7 @@ public class Frag2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_frag1, container, false);
+        View view = inflater.inflate(R.layout.fragment_frag2, container, false);
 
         tvFrag2 = view.findViewById(R.id.tvFrag2);
         btnFrag2 = view.findViewById(R.id.btnFrag2);
